@@ -4,6 +4,7 @@ int ongoingAllowance = 200;
 int savings = 3000;
 
 // TODO: Create an int variable called bonusAllowance with the value 500
+int bonusAllowance = 500;
 
 
 // Display the result
