@@ -1,11 +1,14 @@
 ﻿// TODO Step 1:
 // Create a startingDay variable with a value of 3
+int startingDay = 3;
 
 // TODO Step 2:
 // Create a daysInWeek constant with a value of 7
+const int daysInWeek = 7;
 
 // TODO Step 3:
 // Add the value of the daysInWeek variable to the startingDay variable, using a shortcut operator
+startingDay += daysInWeek;
 
 // Display the result 
 Console.WriteLine("There are " + daysInWeek + " days in a week.");
