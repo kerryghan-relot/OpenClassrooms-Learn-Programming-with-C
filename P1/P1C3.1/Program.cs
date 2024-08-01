@@ -42,3 +42,17 @@ Console.WriteLine($"All the different possible ways of initializing variables :\
                   $"  float   : x1 = {x1}, x2 = {x2}\n" +
                   $"  double  : y1 = {y1}, y2 = {y2}, y3 = {y3}, y4 = {y4}, y5 = {y5}, y6 = {y6}\n" +
                   $"  decimal : z1 = {z1}, z2 = {z2}\n\n");
+
+// Mixing numeric types
+int left = 10;
+int right = 4;
+double top = 3;
+int result1 = left / right;
+double result2 = left / right;
+int result3 = (int)(right / top); // Here, we must explicitely convert the result to the type integer, because the operation leads to a double
+double result4 = left / (double) right;
+Console.WriteLine($"Mixing types in operations :\n\n" +
+                  $"  Result1 = {result1}\n" +
+                  $"  Result2 = {result2}\n" +
+                  $"  Result3 = {result3}\n" +
+                  $"  Result4 = {result4}\n");
