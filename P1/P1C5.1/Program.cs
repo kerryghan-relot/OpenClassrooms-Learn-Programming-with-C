@@ -14,11 +14,13 @@ foreach (string color in colors)
 }
 
 // Different ways to create and initialize the same array
-// I wonder what differences there are. I guess it must be something like you can change the size of b and c but not the size of a, or something like that.
+// I wonder what differences there are. I guess it must have something to do with performance?
 int[] a = new int[5] { 1, 2, 3, 4, 5 };
 int[] b = new int[] { 1, 2, 3, 4, 5 }; // Interstingly, this way of writing is not showed in Microsoft doc.
 int[] c = [1, 2, 3, 4, 5];
 int[] d = {1, 2, 3, 4, 5};
+// This will pass the "build" phase, but will crash at runtime
+// a[5] = 6;
 
 /// Here is what the Microsoft doc says about arrays :
 /// (https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays#single-dimensional-arrays)
