@@ -16,4 +16,3 @@ else
 {
     ConditionnalHello.SayHelloTo("world");
 }
-
