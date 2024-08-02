@@ -2,7 +2,14 @@
 {
     public class UserInput
     {
-        private static void Main(string[] args)
+
+        /// <summary>
+        /// Check if a url is given inside the args array. Otherwise, ask the user to enter a URL.
+        /// It asks a URL until a valid one has been entered.
+        /// </summary>
+        /// <param name="args">List of arguments that was passed to the main function</param>
+        /// <returns>A valid URL in string format</returns>
+        public static string GetURL(string[] args)
         {
             string urlString = "";
 
@@ -23,21 +30,25 @@
 
             Console.WriteLine("\n   ...Checking URL " + urlString + "\n");
 
-            if (IsValidURL(urlString))
+            while (!IsValidURL(urlString))
             {
-                Console.WriteLine(urlString + " is a well-formed URL");
+                Console.WriteLine(urlString + " is not a well-formed URL\n" +
+                                  "Please, try again.");
+                urlString = AskForUrl();
+
             }
-            else
-            {
-                Console.WriteLine(urlString + " is not a well-formed URL");
-            }
+            
+            Console.WriteLine("Well done!\n" + 
+                              urlString + " is a well-formed URL");
+
+            return urlString;
         }
 
         /// <summary>
         /// Prompt user for URL
         /// </summary>
         /// <returns>Prompt user for URL</returns>
-        static string AskForUrl()
+        public static string AskForUrl()
         {
             Console.WriteLine("Please enter a valid URL:");
 
@@ -47,9 +58,9 @@
         /// <summary>
         /// Check if a string is a well-formed URL
         /// </summary>
-        /// <param name="urlString"></param>
+        /// <param name="urlString">A string that should be a valid URL</param>
         /// <returns>true if the URL is well formed, else false</returns>
-        static bool IsValidURL(string urlString)
+        private static bool IsValidURL(string urlString)
         {
             return (Uri.IsWellFormedUriString(urlString, UriKind.Absolute));
         }
