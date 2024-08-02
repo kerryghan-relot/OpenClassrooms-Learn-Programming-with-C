@@ -1,4 +1,4 @@
-﻿namespace P3C2;
+﻿/*namespace P3C2;
 
 public class Animal
 {
@@ -16,3 +16,4 @@ public class Animal
         Console.WriteLine(name);
     }
 }
+*/
