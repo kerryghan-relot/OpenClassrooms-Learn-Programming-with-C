@@ -1,0 +1,15 @@
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.AssemblyInfoInputs.cache
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.AssemblyInfo.cs
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.csproj.CoreCompileInputs.cache
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.sourcelink.json
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\bin\Debug\net8.0\P2C3.exe
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\bin\Debug\net8.0\P2C3.deps.json
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\bin\Debug\net8.0\P2C3.runtimeconfig.json
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\bin\Debug\net8.0\P2C3.dll
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\bin\Debug\net8.0\P2C3.pdb
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.dll
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\refint\P2C3.dll
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.pdb
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\P2C3.genruntimeconfig.cache
+D:\Documents\Personal Programming\AppliDev\Apprentissage Csharp\ExerciseOC\P2\P2C3.1\obj\Debug\net8.0\ref\P2C3.dll
