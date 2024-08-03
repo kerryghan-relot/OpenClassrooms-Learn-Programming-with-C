@@ -1,9 +1,8 @@
-﻿/*namespace P3C2;
+﻿namespace P3C2;
 
 public class Animal
 {
-    //TODO. Keyword missing here
-    private int count = 0;
+    private static int count = 0;
 
     public void Increment()
     {
@@ -16,4 +15,3 @@ public class Animal
         Console.WriteLine(name);
     }
 }
-*/

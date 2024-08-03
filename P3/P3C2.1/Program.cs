@@ -1,6 +1,8 @@
 ﻿
 // TODO: Run the printName function
+using P3C2;
 using System;
+using System.Diagnostics.SymbolStore;
 
 class Program
 {
@@ -12,6 +14,9 @@ class Program
         Console.WriteLine($"a={mm.a}, b={mm.b}");
         mm.ChangeValues();
         Console.WriteLine($"a={mm.a}, b={mm.b}");
+
+        // Work on the animal class
+        Animal.PrintName();
 
         // Work on the Instance_VS_Class_Member class
         Console.WriteLine("\n\nWork on the Instance_VS_Class_Member class:");
@@ -36,6 +41,14 @@ class Program
                           $"Readonly value: {cvr.READONLY_VALUE}");
         cvr.AMethod ();  // The NEW_CONST_VALUE inside that function cannot be accessed here.
 
+        // Work on the TestProperty class
+        Console.WriteLine("\n\nWork on the TimePeriod class:");
+        TimePeriod t = new TimePeriod("duration"){Language="fr", InitTime=666};  // Language here is required whereas InitTime is not.
+        t.Hours = 24;  // The property assignment causes the 'set' accessor to be called.
+        Console.WriteLine($"Time in hours: {t.Hours}");  // Retrieving the property causes the 'get' accessor to be called.
+        Console.WriteLine($"{t.Name}");
+        Console.WriteLine($"ID: {t.Id}");
+        
     }
 
     class MagicMath
@@ -144,6 +157,90 @@ class Program
             // readonly int NEW_READONLY_VALUE = 3;  // Cannot be done
             Console.WriteLine("--We are in AMethod!\n" +
                               $"New const value: {NEW_CONST_VALUE}");
+        }
+    }
+
+    /// <summary>
+    /// This class implement some test on the accessors.
+    /// </summary>
+    /// <remarks>
+    /// As the OC course wasn't very insightful on the matter, I had to search for more ressources on the web:
+    ///  - https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/properties
+    ///  - https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers#object-initializers-with-the-required-modifier
+    ///  - https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/using-properties
+    ///  - https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties
+    /// </remarks>
+    public class TimePeriod(string label)  // Here we define the constructor directly here.
+    {
+        private double _seconds;
+        private string _label = label;
+        private int _importance;
+        // When working with very simple variables, there's no complex logic or checking to do, so we can simply let the compiler do its magic.
+        public string? Author { get; set; } // This is an auto implemented property. The '?', is here to explicitly say that Author can take a null value.
+        public int Id { get; private set; } = 1234;  // Obviously we can specify a value directly after.
+        public required string Language { get; set; }  // The modifier "required" specify the the caller will have to specify a value for it in the initialize.
+        public int InitTime { get; init; } // This can be initialize in the initializer, but not modified afterwards
+        public decimal UselessValue { get; }  // Using an auto implemented value, we can define the 'get' accessor only. Unfortunately we can't do the same with set
+        private decimal _uselessValue2;
+        public decimal UselessValue2  // However, when implementing accessors manual we can choose which ever we want to implement.
+        {
+            set
+            {
+                _uselessValue2 = value;
+            }
+        }
+
+
+
+        // The following is a read-only expression-bodied member. That means that the 'get' and 'return' keywords
+        // were not necessary and that there is no 'set' property
+        public string Name => $"Timer {_label}";
+
+        public double Hours
+        {
+            get { return _seconds / 3600; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),
+                        "The value provided must be positive");
+                }
+                _seconds = value * 3600;
+            }
+        }
+        public double Minutes
+        {
+            get { return _seconds / 60; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),
+                        "The value provided must be positive");
+                }
+                _seconds = value * 60;
+            }
+        }
+        public double Seconds
+        {
+            get { return _seconds; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),
+                        "The value provided must be positive");
+                }
+                _seconds = value;
+            }
+        }
+        // As you can see just bellow, both 'get' and 'set' can be implemented using an expression-bodied member.
+        // In that case those keyword are necessary, but the 'return' keyword is still not necessary
+        public int Importance
+        {
+            get => _importance;
+            set => _importance = value;
         }
     }
 }
